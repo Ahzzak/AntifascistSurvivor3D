@@ -65,6 +65,12 @@ public class Data : MonoBehaviour
         Difficulty += 1;
         UnityEngine.Debug.Log("Difficulty : " + Difficulty);
         StartCoroutine(IncreaseDifficulty());
+        for (var i = 0; i < Difficulty * 2; i++)
+        {
+            Vector3 Spawner = Random.insideUnitSphere * 40;
+            Spawner = new Vector3(Spawner.x, 2, Spawner.z);
+            Instantiate(Brick, Spawner, Quaternion.identity);
+        }
     }
     public void PlayerDamaged()
     {
