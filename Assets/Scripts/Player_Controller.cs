@@ -43,6 +43,17 @@ public class Player_Controller : MonoBehaviour
         {
             AmmoFeedback.SetActive(false);
         }
+        if (Data.Instance.Hp <= 0)
+        {
+            Application.Quit();
+            Destroy(gameObject);
+            
+        }
+        if (transform.position.y < -15)
+        {
+            Application.Quit();
+            Destroy(gameObject);
+        }
     }
 
     void OnMove(InputValue value)
@@ -61,6 +72,7 @@ public class Player_Controller : MonoBehaviour
         if (Volume.InteractBuffer != null)
         {
             Volume.InteractBuffer.SendMessage("PickUp");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX_Pickup");
         }
     }
     void OnThrow()
@@ -70,7 +82,6 @@ public class Player_Controller : MonoBehaviour
             Vector3 Offset = new Vector3(0, 0.5f, 0) + Camera.transform.forward;
             Vector3 ThrowOrigin = transform.position + Offset;
             Quaternion ThrowOrientation = Quaternion.LookRotation(new Vector3(Random.Range(0, 45), Random.Range(0, 45), Random.Range(0, 45)));
-            UnityEngine.Debug.Log(transform.position.z);
             Rigidbody p = Instantiate(Projectile, ThrowOrigin, ThrowOrientation);
             p.linearVelocity = Camera.transform.forward * speed;
             Data.Instance.Ammo += -1;

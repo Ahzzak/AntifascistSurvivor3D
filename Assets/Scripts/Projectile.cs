@@ -24,11 +24,14 @@ public class Projectile : MonoBehaviour
             if (Target.layer == 8)
             {
                 Instantiate(Blood, transform.position, transform.rotation);
-                Target.SendMessage("Hit", true);
+            Target.SendMessage("Hit", true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX_Brick_Gore", transform.position);
+                Data.Instance.Score += 10;
             }
             if (Target.layer == 9)
             {
-                Target.SendMessage("Hit", true);
+            Target.SendMessage("Hit", true);
+            Data.Instance.Score += -50;
             }
             Destroy(gameObject);
         

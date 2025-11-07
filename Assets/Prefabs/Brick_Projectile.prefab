@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6436140692182109180}
   - component: {fileID: 6956785015903157503}
   - component: {fileID: 6103099280606846324}
+  - component: {fileID: 1999051605388586216}
   m_Layer: 6
   m_Name: Brick_Projectile
   m_TagString: Untagged
@@ -156,6 +157,37 @@ MonoBehaviour:
   Target: {fileID: 0}
   Brick: {fileID: 7815570570685710722, guid: f087998a38dce4ee9a7248d5fe23053b, type: 3}
   Blood: {fileID: 6231103235360320791, guid: b013d3191d7ebaa43832990ad9c55d52, type: 3}
+--- !u!114 &1999051605388586216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261678497077132403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1482787250
+      Data2: 1128309151
+      Data3: -1734846281
+      Data4: 493685858
+    Path: event:/SFX_Brick_Hit
+  Event: 
+  EventPlayTrigger: 7
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 40
 --- !u!1 &5070196852451942779
 GameObject:
   m_ObjectHideFlags: 0

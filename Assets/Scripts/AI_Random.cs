@@ -42,9 +42,9 @@ public class RandomAI : MonoBehaviour
     }
     Vector3 getNewRandomPosition()
     {
-        float x = Random.Range(-20, 20);
+        float x = Random.Range(-40, 40);
         //   float y = Random.Range(-20, 20); I'm not sure if I should also use Y or not for going to other floors :/
-        float z = Random.Range(-20, 20);
+        float z = Random.Range(-40, 40);
         Vector3 pos = new Vector3(x, 0, z);
         return pos;
 

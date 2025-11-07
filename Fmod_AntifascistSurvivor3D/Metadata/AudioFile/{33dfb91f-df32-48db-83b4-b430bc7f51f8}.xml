@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{33dfb91f-df32-48db-83b4-b430bc7f51f8}">
+		<property name="assetPath">
+			<value>SFX_Pickup_Brick_001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.41612500000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{18950b81-901e-4f31-968b-1744837fc79f}</destination>
+		</relationship>
+	</object>
+</objects>
