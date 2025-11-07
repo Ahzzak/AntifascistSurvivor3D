@@ -13,6 +13,7 @@ public class AgentBehavior : MonoBehaviour
     void Start()
     {
         PNG = PNGs[Random.Range(0, PNGs.Length)];
+        Image.texture = PNG;
         _destination = Player_Controller.Instance.transform;
     }
 
@@ -23,6 +24,12 @@ public class AgentBehavior : MonoBehaviour
         {
             navMeshAgent.destination = _destination.position;
         }
-
     }
-}
+    public void Hit()
+    {
+        transform.rotation = new Quaternion(45, 45, 45, 45);
+         Rigidbody TargetRigid = GetComponent<Rigidbody>();
+            TargetRigid.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        }
+    }

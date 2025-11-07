@@ -132,7 +132,7 @@ Rigidbody:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -153,4 +153,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Ui: {fileID: 0}
-  Data: {fileID: 5943666224293277234, guid: 56d043e51efbe4af8af11b4fca35fa3a, type: 3}

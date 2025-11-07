@@ -4,33 +4,34 @@ public class Projectile : MonoBehaviour
 {
     public GameObject Target;
     public Rigidbody Brick;
+    public ParticleSystem Blood;
+    private bool Doonce = false;
     void Start()
     {
     }
     void OnCollisionEnter(Collision other)
     {
-        Rigidbody p = Instantiate(Brick, transform.position, transform.rotation);
-        Target = other.gameObject;
-        if (Target.layer == 3)
+        if (Doonce != true)
         {
-            Application.Quit();
+            Doonce = true;
+            Rigidbody p = Instantiate(Brick, transform.position, transform.rotation);
         }
-        if (Target.layer == 8)
-        {
-            Rigidbody TargetRigid = Target.GetComponent<Rigidbody>();
-            TargetRigid.useGravity = false;
-            TargetRigid.constraints = RigidbodyConstraints.None;
-            TargetRigid.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
-            Target.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-            UnityEngine.Debug.Log("Meurt pourriture capitaliste");
-            TargetRigid.useGravity = true;
-
-        }
-        if (Target.layer == 9)
-        {
-            Target.SendMessage("Hit", true);
-        }
-        Destroy(gameObject);
+                 Target = other.gameObject;
+            if (Target.layer == 3)
+            {
+                Application.Quit();
+            }
+            if (Target.layer == 8)
+            {
+                Instantiate(Blood, transform.position, transform.rotation);
+                Target.SendMessage("Hit", true);
+            }
+            if (Target.layer == 9)
+            {
+                Target.SendMessage("Hit", true);
+            }
+            Destroy(gameObject);
+        
 
 
     }
