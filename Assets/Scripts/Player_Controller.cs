@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Player_Controller : MonoBehaviour
             Instance = this;
         }
         Cursor.lockState = CursorLockMode.Locked;
+        EnhancedTouchSupport.Enable();
     }
 
     // Update is called once per frame
@@ -58,7 +60,9 @@ public class Player_Controller : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        direction = value.Get<Vector3>();
+        Vector2 ZQSD = value.Get<Vector2>();
+        direction.x = ZQSD.x;
+        direction.z = ZQSD.y;
     }
 
     void OnLook(InputValue value)

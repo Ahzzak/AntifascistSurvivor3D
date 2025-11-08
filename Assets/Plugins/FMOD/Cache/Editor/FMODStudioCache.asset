@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Fmod_AntifascistSurvivor3D/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638981290489856406
+  lastModified: 638981471620101280
   FileSizes:
   - Name: Desktop
     Value: 1616992
@@ -100,7 +100,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7940457218105051980}
   cacheVersion: 131856
-  cacheTime: 638981290489884770
+  cacheTime: 638981471620101280
   SerializableEventsDict:
   - key: event:/SFX_Pickup
     index: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   Path: Fmod_AntifascistSurvivor3D/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638981290489884770
+  lastModified: 638981471620101280
   FileSizes:
   - Name: Desktop
     Value: 916
